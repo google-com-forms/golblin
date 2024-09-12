@@ -21,6 +21,38 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
+
+
+<script>
+  // Reklam SDK dosyasını engelle
+  document.addEventListener("DOMContentLoaded", function() {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src.includes('sdk.js') || scripts[i].src.includes('gamemonetize')) {
+        scripts[i].parentNode.removeChild(scripts[i]);
+        console.log("GameMonetize SDK engellendi.");
+      }
+    }
+  });
+
+  // SDK'nın ağ isteğini engelle
+  (function(open) {
+    XMLHttpRequest.prototype.open = function(method, url) {
+      if (url.includes('sdk.js') || url.includes('gamemonetize')) {
+        console.log("GameMonetize SDK'nın yüklenmesi engellendi:", url);
+        return;
+      }
+      open.apply(this, arguments);
+    };
+  })(XMLHttpRequest.prototype.open);
+
+  // Reklam fonksiyonlarını devre dışı bırak
+  window.showAds = function() {
+    console.log("Reklam gösterimi engellendi.");
+  };
+</script>
+
+
     <script>
       const hideFullScreenButton = "";
       const buildUrl = "https://cdn.jsdelivr.net/gh/SternyFahizh/RabbitMQ@a07dd48c90687097d624ad863efdbda0015f8981/ruby/ch";
@@ -91,6 +123,17 @@
         container.className = "unity-mobile";
         config.devicePixelRatio = 1.5;
       }
+
+// Reklam SDK'sının ağ isteğini engelle
+(function(open) {
+  XMLHttpRequest.prototype.open = function(method, url) {
+    if (url.includes('sdk.js') || url.includes('gamemonetize')) {
+      console.log("GameMonetize SDK'nın yüklenmesi engellendi:", url);
+      return;
+    }
+    open.apply(this, arguments);
+  };
+})(XMLHttpRequest.prototype.open);
 
 
     </script>
