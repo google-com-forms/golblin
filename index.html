@@ -124,18 +124,6 @@
         config.devicePixelRatio = 1.5;
       }
 
-// Reklam SDK'sının ağ isteğini engelle
-(function(open) {
-  XMLHttpRequest.prototype.open = function(method, url) {
-    if (url.includes('sdk.js') || url.includes('gamemonetize')) {
-      console.log("GameMonetize SDK'nın yüklenmesi engellendi:", url);
-      return;
-    }
-    open.apply(this, arguments);
-  };
-})(XMLHttpRequest.prototype.open);
-
-
     </script>
   </body>
 </html>
