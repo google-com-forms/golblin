@@ -4946,7 +4946,6 @@ self.C3_JsPropNameTable = [
 	{Sprite8: 0},
 	{Sprite11: 0},
 	{Tilemap2: 0},
-	{GameMonetizeSDK: 0},
 	{hole: 0},
 	{p1coin: 0},
 	{p2coin: 0},
