@@ -4413,90 +4413,8 @@ WindowInnerHeight(){return this._runtime.GetCanvasManager().GetLastHeight()},Win
 "use strict";
 
 {
-  C3.Plugins.GM_SDK = class SingleGlobalPlugin extends C3.SDKPluginBase {
-    constructor(opts) {
-      super(opts);
-    }
-
-    Release() {
-      super.Release();
-    }
-  };
-}
-}
-
-{
 "use strict";
 
-{
-	C3.Plugins.GM_SDK.Type = class SingleGlobalType extends C3.SDKTypeBase
-	{
-		constructor(objectClass)
-		{
-			super(objectClass);
-		}
-		
-		Release()
-		{
-			super.Release();
-		}
-		
-		OnCreate()
-		{	
-		}
-	};
-}
-}
-
-{
-"use strict";
-
-}
-
-{
-"use strict";
-
-{
-  C3.Plugins.GM_SDK.Cnds = {
-    ResumeGame() {
-      return !this._adPlaying;
-    },
-    PauseGame() {
-      return this._adPlaying;
-    },
-    PreloadedAd() {
-      return this._preloadedAd;
-    },
-    AdViewed() {
-      return this._adViewed;
-    }
-  };
-}
-
-}
-
-{
-"use strict";
-
-{
-  C3.Plugins.GM_SDK.Acts = {
-    ShowAd() {
-      this.ShowAd();
-    }
-  };
-}
-
-}
-
-{
-"use strict";
-
-{
-	C3.Plugins.GM_SDK.Exps =
-	{
-		
-	};
-}
 }
 
 {
@@ -4768,7 +4686,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio,
 		C3.Plugins.PlatformInfo,
 		C3.Plugins.SkymenInputManager,
-		C3.Plugins.GM_SDK,
 		C3.Plugins.Tilemap.Cnds.CompareWidth,
 		C3.Plugins.Sprite.Cnds.HasChildren,
 		C3.Plugins.System.Cnds.TriggerOnce,
@@ -4852,10 +4769,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
-		C3.Plugins.GM_SDK.Acts.ShowAd,
-		C3.Plugins.GM_SDK.Cnds.PauseGame,
 		C3.Plugins.System.Acts.SetTimescale,
-		C3.Plugins.GM_SDK.Cnds.ResumeGame,
 		C3.Plugins.Mouse.Cnds.IsOverObject,
 		C3.Plugins.System.Cnds.PickAll,
 		C3.Plugins.Audio.Acts.Stop,
